@@ -11,6 +11,7 @@ type CarInterface1 interface {
 type CarInterface2 interface {
 	Speed() string
 }
+
 type CarInterface3 interface {
 	CarInterface1
 	CarInterface2

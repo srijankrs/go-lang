@@ -12,7 +12,7 @@ type CarInterface2 interface {
 	Speed() string
 }
 type CarInterface3 interface {
-	Speed() string
+	Mileage() string
 }
 
 type Honda struct {
@@ -29,19 +29,23 @@ func (honda Honda) Speed() string {
 }
 
 func main() {
-	var car CarInterface1= Honda{"Red",240}
-	carObj1 := car.(Honda)
-
-	fmt.Println(carObj1.Color())
-	fmt.Println(carObj1.Speed())
-
-
 	//var car CarInterface1= Honda{"Red",240}
+	//carObj1 := car.(Honda)
 	//
-	//carObj1, err := car.(CarInterface2)
-	//fmt.Println("Value ",carObj1," | error ",err)
 	//
-	//carObj2, err := car.(CarInterface3)
-	//fmt.Println("Value ",carObj2," | error ",err)
+	//fmt.Printf("%T",carObj1)
+	//fmt.Println(carObj1.Color())
+	//fmt.Println(carObj1.Speed())
+
+
+	var car CarInterface1= Honda{"Red",240}
+
+	carObj2, err := car.(CarInterface2)
+	fmt.Printf("%T",carObj2)
+	fmt.Println("Value ",carObj2," | error ",err)
+
+	carObj3, err := car.(CarInterface3)
+	fmt.Printf("%T",carObj3)
+	fmt.Println("Value ",carObj3," | error ",err)
 }
 
